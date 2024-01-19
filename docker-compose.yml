@@ -1,0 +1,24 @@
+#docker compose up -d >>to run from terminal
+#docker compose ps >>  to see status
+services:
+  db:
+    container_name: postgres-tindzava
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
+    volumes:
+      - db:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  db:
