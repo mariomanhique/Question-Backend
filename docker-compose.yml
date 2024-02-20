@@ -6,7 +6,7 @@ services:
     image: postgres:alpine
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: _Drip@2023
       PGDATA: /data/postgres
     volumes:
       - db:/data/postgres

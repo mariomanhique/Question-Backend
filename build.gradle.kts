@@ -2,7 +2,6 @@ plugins {
     java
     id("org.springframework.boot") version "3.2.1"
     id("io.spring.dependency-management") version "1.1.4"
-//    id ("com.bmuschko.docker-remote-api") version "6.7.0"
 }
 
 group = "com.mariomanhique"
@@ -23,8 +22,11 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("javax.xml.bind:jaxb-api:2.3.0")
-//    implementation("org.hibernate:hibernate-entitymanager:5.6.15.Final")
-//    implementation("org.hibernate:hibernate-core:6.4.1.Final")
+    compileOnly ("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
+
+//    implementation("com.github.javafaker:javafaker:1.0.2")
+
 }
 
 tasks.withType<Test> {

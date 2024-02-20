@@ -41,28 +41,24 @@ public class QuestionService implements QuestionDao {
             String question,
             String answer
     ){
-
         Question question1 = questionRepository.findById(questionId)
                 .orElseThrow(()-> new IllegalStateException(("")));
 
         if(question != null &&
                 question.length() > 0 &&
                 !Objects.equals(question1.getQuestion(), question)){
-          question1.setQuestion("First Question");
+          question1.setQuestion(question);
         }
 
         if(answer != null &&
-                question.length() > 0 &&
+                answer.length() > 0 &&
                 !Objects.equals(question1.getAnswer(), answer)){
-            question1.setAnswer("First Answer");
+            question1.setAnswer(answer);
         }
-
     }
 
     @Override
-    public void saveQuestion(
-            Question question
-            ){
+    public void saveQuestion(Question question){
         Optional<Question> studentOptional = questionRepository.findQuestionByQuestion(question.getQuestion());
         if (studentOptional.isPresent()){
             throw new IllegalStateException("question already registered in database");
