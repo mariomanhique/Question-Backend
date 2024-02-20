@@ -2,7 +2,7 @@ FROM openjdk:17-jdk
 
 WORKDIR /app
 
-COPY target/tindzava-0.0.1-SNAPSHOT.jar /app/tindzava.jar
+COPY build/libs/tindzava-0.0.1-SNAPSHOT.jar /app/tindzava.jar
 
 EXPOSE 8080
 
