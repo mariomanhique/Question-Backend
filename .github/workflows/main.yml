@@ -31,12 +31,12 @@
             ./gradlew clean
             ./gradlew build
 
-        - name: Build docker image
-          uses: actions/build-push-actions@v5
-          with:
-            context: .
-            dockerfile: Dockerfile
-            push: false
-# We set the push to false because in this step we just want to check if we can create the image or not.
-#            tags: ${{ secrets.DOCKER_HUB_USERNAME}}Questions-Backend:latest  #We want this tag to be dynamic
-            tags: ${{ secrets.DOCKER_HUB_USERNAME}}Questions-Backend:$(date-'%Y-%m-%d-%H-%M-%S')  #We want this tag to be dynamic
+#        - name: Build docker image
+#          uses: actions/build-push-actions@v5
+#          with:
+#            context: .
+#            dockerfile: Dockerfile
+#            push: false
+## We set the push to false because in this step we just want to check if we can create the image or not.
+##            tags: ${{ secrets.DOCKER_HUB_USERNAME}}Questions-Backend:latest  #We want this tag to be dynamic
+#            tags: ${{ secrets.DOCKER_HUB_USERNAME}}Questions-Backend:$(date-'%Y-%m-%d-%H-%M-%S')  #We want this tag to be dynamic
