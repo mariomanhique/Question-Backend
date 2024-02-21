@@ -41,8 +41,9 @@
             tags: ${{ secrets.DOCKER_HUB_USERNAME}}questions-backend:latest  #We want this tag to be dynamic
 #            tags: ${{ secrets.DOCKER_HUB_USERNAME}}Questions-Backend:$(date-'%Y%m%d%H%M%S')  #We want this tag to be dynamic
 
-        - name: Set up Docker Buildx
-          uses: docker/setup-buildx-action@v3
+#        - name: Set up Docker Buildx
+#          uses: docker/setup-buildx-action@v3
+
         - name: Login to Docker Hub
           uses: docker/login-action@v3
           with:
